@@ -38,7 +38,7 @@
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-brand-darkbg dark:text-slate-200 font-sans antialiased transition-colors duration-300">
 
-   <nav class="bg-white/90 dark:bg-brand-darkbg/90 backdrop-blur-md shadow-sm fixed w-full z-50 top-0 transition-colors duration-300">
+    <nav class="bg-white/90 dark:bg-brand-darkbg/90 backdrop-blur-md shadow-sm fixed w-full z-50 top-0 transition-colors duration-300">
         <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
             <div class="font-bold text-xl text-brand-navy dark:text-white flex items-center gap-2">
                 <a href="index.html" class="flex items-center gap-2">
@@ -86,55 +86,52 @@
         </div>
     </section>
     
-    <section id="about" class="py-24 px-4 max-w-4xl mx-auto reveal">
-        <h2 class="text-3xl font-bold text-brand-navy dark:text-white mb-8 text-center">Engineering Philosophy</h2>
-        <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed text-center mb-10">
-            Specializing in full-stack development, I build dynamic, high-performance web applications from the ground up. Whether it's crafting seamless frontend experiences using SvelteKit and TypeScript, or engineering resilient backend architectures with Spring Boot and PostgreSQL, the focus is always on writing clean, maintainable code that solves complex business problems.
-        </p>
-        <div class="flex flex-wrap justify-center gap-3">
-            <span class="bg-slate-200 dark:bg-slate-800 text-brand-navy dark:text-brand-cyan px-4 py-2 rounded-md font-medium shadow-sm">TypeScript / JavaScript</span>
-            <span class="bg-slate-200 dark:bg-slate-800 text-brand-navy dark:text-brand-cyan px-4 py-2 rounded-md font-medium shadow-sm">Java / Spring Boot</span>
-            <span class="bg-slate-200 dark:bg-slate-800 text-brand-navy dark:text-brand-cyan px-4 py-2 rounded-md font-medium shadow-sm">Python & C</span>
-            <span class="bg-slate-200 dark:bg-slate-800 text-brand-navy dark:text-brand-cyan px-4 py-2 rounded-md font-medium shadow-sm">PostgreSQL / SQL</span>
-        </div>
-    </section>
-
     <section id="portfolio" class="py-24 px-4 bg-slate-100 dark:bg-brand-darkbg transition-colors duration-300">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-3xl font-bold text-brand-navy dark:text-white mb-12 text-center reveal">Recent Architecture</h2>
-            <div class="grid md:grid-cols-2 gap-8">
+            
+            <div class="bg-white dark:bg-brand-darkcard rounded-xl shadow-lg overflow-hidden reveal border border-transparent dark:border-slate-700 mb-12">
                 
-                <div class="bg-white dark:bg-brand-darkcard rounded-xl shadow-md overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300 reveal border border-transparent dark:border-slate-700">
-                    <div class="h-48 bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 font-mono text-sm border-b dark:border-slate-700">
-                        [ Full-Stack Architecture ]
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-xl font-bold text-brand-navy dark:text-white mb-3">Migraine Diary Web App</h3>
-                        <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">A comprehensive tracking application featuring a highly interactive frontend and a secure, normalized backend database for managing user health data.</p>
-                        <div class="flex flex-wrap gap-2 text-xs text-brand-teal font-semibold">
-                            <span class="px-2 py-1 bg-teal-50 dark:bg-teal-900/30 rounded">SvelteKit</span>
-                            <span class="px-2 py-1 bg-teal-50 dark:bg-teal-900/30 rounded">Spring Boot</span>
-                            <span class="px-2 py-1 bg-teal-50 dark:bg-teal-900/30 rounded">PostgreSQL</span>
-                        </div>
-                    </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-2 bg-slate-200 dark:bg-slate-800 p-4 border-b dark:border-slate-700">
+                    <img src="diary1.png" alt="Migraine Diary Dashboard View" class="lightbox-trigger w-full h-48 object-cover rounded shadow-sm hover:scale-[1.02] transition-transform cursor-pointer">
+                    <img src="diary2.png" alt="Migraine Diary Patient Logging View" class="lightbox-trigger w-full h-48 object-cover rounded shadow-sm hover:scale-[1.02] transition-transform cursor-pointer">
+                    <img src="diary3.png" alt="Migraine Diary History View" class="lightbox-trigger w-full h-48 object-cover rounded shadow-sm hover:scale-[1.02] transition-transform cursor-pointer">
                 </div>
 
-                <div class="bg-white dark:bg-brand-darkcard rounded-xl shadow-md overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300 reveal border border-transparent dark:border-slate-700 delay-100">
-                    <div class="h-48 bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 font-mono text-sm border-b dark:border-slate-700">
-                        [ Custom Engine Design ]
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-xl font-bold text-brand-navy dark:text-white mb-3">Arcade Classic Engine</h3>
-                        <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">A custom-built HTML5 Canvas game showcasing core rendering loops, event handling, and pure JavaScript logic without relying on external libraries.</p>
-                        <div class="flex flex-wrap gap-2 text-xs text-brand-teal font-semibold">
-                            <span class="px-2 py-1 bg-teal-50 dark:bg-teal-900/30 rounded">JavaScript</span>
-                            <span class="px-2 py-1 bg-teal-50 dark:bg-teal-900/30 rounded">HTML5 Canvas</span>
-                            <span class="px-2 py-1 bg-teal-50 dark:bg-teal-900/30 rounded">CSS</span>
+                <div class="p-8">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                        <h3 class="text-2xl font-bold text-brand-navy dark:text-white">Migraine Diary Tracking Application</h3>
+                        <div class="flex gap-2 mt-2 md:mt-0 text-xs text-brand-teal font-semibold">
+                            <span class="px-3 py-1 bg-teal-50 dark:bg-teal-900/30 rounded-full border border-teal-200 dark:border-teal-800">SvelteKit</span>
+                            <span class="px-3 py-1 bg-teal-50 dark:bg-teal-900/30 rounded-full border border-teal-200 dark:border-teal-800">Spring Boot</span>
+                            <span class="px-3 py-1 bg-teal-50 dark:bg-teal-900/30 rounded-full border border-teal-200 dark:border-teal-800">PostgreSQL</span>
                         </div>
                     </div>
+                    
+                    <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed text-lg">
+                        A comprehensive, full-stack health tracking application designed to facilitate detailed symptom logging and clinical oversight. 
+                    </p>
+                    
+                    <h4 class="font-bold text-brand-navy dark:text-slate-200 mb-2">Core Functionality:</h4>
+                    <ul class="list-disc list-inside text-slate-600 dark:text-slate-400 space-y-2 mb-6 ml-2">
+                        <li><strong>Secure Authentication:</strong> Role-based account management separating standard user access from administrative privileges.</li>
+                        <li><strong>Daily Logging & History:</strong> Intuitive interface for patients to record daily migraine events, triggers, and severity, with a comprehensive historical view.</li>
+                        <li><strong>Administrative Oversight:</strong> Dedicated dashboard allowing admins or medical professionals to securely view and analyze any patient's logged records and history.</li>
+                    </ul>
                 </div>
-
             </div>
+
+            <div class="bg-white dark:bg-brand-darkcard rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300 reveal border border-transparent dark:border-slate-700">
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-brand-navy dark:text-white mb-3">Arcade Classic Engine</h3>
+                    <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">A custom-built HTML5 Canvas game showcasing core rendering loops, event handling, and pure JavaScript logic without relying on external libraries.</p>
+                    <div class="flex flex-wrap gap-2 text-xs text-brand-teal font-semibold">
+                        <span class="px-2 py-1 bg-teal-50 dark:bg-teal-900/30 rounded">JavaScript</span>
+                        <span class="px-2 py-1 bg-teal-50 dark:bg-teal-900/30 rounded">HTML5 Canvas</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -162,6 +159,11 @@
         <p>&copy; 2026 Hook Point Solutions. All rights reserved.</p>
     </footer>
 
+    <div id="lightbox" class="fixed inset-0 z-[100] hidden bg-black/90 flex items-center justify-center p-4 transition-opacity">
+        <button id="lightbox-close" class="absolute top-6 right-6 text-white hover:text-brand-teal text-4xl focus:outline-none">&times;</button>
+        <img id="lightbox-img" src="" alt="Enlarged View" class="max-h-[90vh] max-w-full rounded shadow-2xl">
+    </div>
+
     <script>
         // --- Dark Mode Logic ---
         const themeToggleBtn = document.getElementById('theme-toggle');
@@ -169,7 +171,6 @@
         const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
         const mobileThemeToggleBtn = document.getElementById('mobile-theme-toggle');
 
-        // Change the icons inside the button based on previous settings
         function updateIcons() {
             if (document.documentElement.classList.contains('dark')) {
                 themeToggleLightIcon.classList.remove('hidden');
@@ -180,7 +181,6 @@
             }
         }
 
-        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
         } else {
@@ -210,7 +210,6 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Close mobile menu when clicking a link
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
@@ -224,19 +223,58 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                    observer.unobserve(entry.target); // Only animate once
+                    observer.unobserve(entry.target); 
                 }
             });
         };
 
         const revealOptions = {
-            threshold: 0.1, // Trigger when 10% of element is visible
+            threshold: 0.1, 
             rootMargin: "0px 0px -50px 0px"
         };
 
         const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
-        
         revealElements.forEach(el => revealObserver.observe(el));
+
+        // --- Lightbox Logic ---
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.getElementById('lightbox-close');
+        const triggers = document.querySelectorAll('.lightbox-trigger');
+
+        // Open Lightbox
+        triggers.forEach(trigger => {
+            trigger.addEventListener('click', function() {
+                lightboxImg.src = this.src; // Set the large image to the clicked thumbnail's source
+                lightbox.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling while open
+            });
+        });
+
+        // Close Lightbox functions
+        const closeLightbox = () => {
+            lightbox.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+            setTimeout(() => { lightboxImg.src = ''; }, 300); // Clear image after animation
+        };
+
+        // Close when clicking the "X"
+        lightboxClose.addEventListener('click', closeLightbox);
+        
+        // Close when clicking outside the image (on the dark background)
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // Close on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+                closeLightbox();
+            }
+        });
+
     </script>
 </body>
 </html>
