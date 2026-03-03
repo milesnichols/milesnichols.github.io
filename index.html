@@ -38,58 +38,54 @@
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-brand-darkbg dark:text-slate-200 font-sans antialiased transition-colors duration-300">
 
-    <nav class="bg-white/90 dark:bg-brand-darkbg/90 backdrop-blur-md shadow-sm fixed w-full z-50 top-0 transition-colors duration-300">
+   <nav class="bg-white/90 dark:bg-brand-darkbg/90 backdrop-blur-md shadow-sm fixed w-full z-50 top-0 transition-colors duration-300">
         <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            
             <div class="font-bold text-xl text-brand-navy dark:text-white flex items-center gap-2">
-                <img src="logo.png" alt="Hook Point Solutions Logo" class="h-10 w-auto">
-                <span class="hidden sm:inline">Hook Point Solutions</span>
+                <a href="index.html" class="flex items-center gap-2">
+                    <img src="logo.png" alt="Hook Point Solutions Logo" class="h-10 w-auto">
+                    <span class="hidden sm:inline">Hook Point Solutions</span>
+                </a>
             </div>
             
             <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-600 dark:text-slate-300">
-                <a href="#about" class="hover:text-brand-teal dark:hover:text-brand-cyan transition">About</a>
-                <a href="#portfolio" class="hover:text-brand-teal dark:hover:text-brand-cyan transition">Portfolio</a>
-                <a href="#contact" class="hover:text-brand-teal dark:hover:text-brand-cyan transition">Contact</a>
+                <a href="about.html" class="hover:text-brand-teal dark:hover:text-brand-cyan transition">About</a>
+                <a href="index.html#portfolio" class="hover:text-brand-teal dark:hover:text-brand-cyan transition">Portfolio</a>
+                <a href="index.html#contact" class="hover:text-brand-teal dark:hover:text-brand-cyan transition">Contact</a>
                 
                 <button id="theme-toggle" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition">
-                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path>
-                    </svg>
-                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-slate-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-                    </svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path></svg>
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-slate-600" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
                 </button>
             </div>
 
             <div class="md:hidden flex items-center gap-4">
-                <button id="mobile-theme-toggle" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-amber-500">
-                    <span class="text-sm">🌓</span>
-                </button>
-                <button id="mobile-menu-btn" class="text-slate-600 dark:text-slate-300 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                </button>
+                <button id="mobile-theme-toggle" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-amber-500"><span class="text-sm">🌓</span></button>
+                <button id="mobile-menu-btn" class="text-slate-600 dark:text-slate-300 focus:outline-none"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
             </div>
         </div>
 
         <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-brand-darkbg border-t dark:border-slate-800 absolute w-full shadow-lg">
             <div class="flex flex-col px-4 py-4 space-y-4 text-center">
-                <a href="#about" class="text-slate-600 dark:text-slate-300 hover:text-brand-teal">About</a>
-                <a href="#portfolio" class="text-slate-600 dark:text-slate-300 hover:text-brand-teal">Portfolio</a>
-                <a href="#contact" class="text-slate-600 dark:text-slate-300 hover:text-brand-teal">Contact</a>
+                <a href="about.html" class="text-slate-600 dark:text-slate-300 hover:text-brand-teal">About</a>
+                <a href="index.html#portfolio" class="text-slate-600 dark:text-slate-300 hover:text-brand-teal">Portfolio</a>
+                <a href="index.html#contact" class="text-slate-600 dark:text-slate-300 hover:text-brand-teal">Contact</a>
             </div>
         </div>
     </nav>
 
     <section id="home" class="pt-40 pb-20 px-4 text-center bg-brand-navy dark:bg-slate-900 text-white transition-colors duration-300">
-        <div class="max-w-3xl mx-auto reveal">
+        <div class="max-w-3xl mx-auto reveal flex flex-col items-center">
+            
+            <img src="logo.png" alt="Hook Point Solutions Large Logo" class="h-40 md:h-56 mb-8 drop-shadow-[0_0_20px_rgba(20,184,166,0.2)]">
+
             <h1 class="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight">Precise Technical <span class="text-brand-teal">Solutions.</span></h1>
             <p class="text-xl text-slate-300 mb-10 leading-relaxed">Expert software consulting delivering robust, scalable, and secure full-stack architecture.</p>
-            <a href="#contact" class="inline-block bg-brand-teal hover:bg-brand-cyan text-white font-bold py-3 px-8 rounded-full transition duration-300 shadow-[0_0_15px_rgba(20,184,166,0.5)]">
+            <a href="index.html#contact" class="inline-block bg-brand-teal hover:bg-brand-cyan text-white font-bold py-3 px-8 rounded-full transition duration-300 shadow-[0_0_15px_rgba(20,184,166,0.5)]">
                 Let's Build Together
             </a>
         </div>
     </section>
-
+    
     <section id="about" class="py-24 px-4 max-w-4xl mx-auto reveal">
         <h2 class="text-3xl font-bold text-brand-navy dark:text-white mb-8 text-center">Engineering Philosophy</h2>
         <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed text-center mb-10">
