@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            darkMode: 'class', // Enables dark mode toggling
+            darkMode: 'class', 
             theme: {
                 extend: {
                     colors: {
@@ -24,7 +24,6 @@
         }
     </script>
     <style>
-        /* CSS for the scroll reveal animation */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -82,13 +81,50 @@
             </a>
         </div>
     </section>
+
+    <section id="expertise" class="py-24 px-4 bg-slate-900 dark:bg-black text-white border-t border-slate-800">
+        <div class="max-w-6xl mx-auto text-center reveal">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 tracking-wide uppercase">Solving Your Most Complex Challenges.</h2>
+            <p class="text-lg text-slate-300 max-w-4xl mx-auto mb-20 leading-relaxed">
+                We take an iterative approach to software development—deeply understanding the problem before crafting the simplest solution. Our focus is on maintainability, security, and clean architecture when engineering enterprise applications.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+                
+                <div class="flex flex-col items-center">
+                    <div class="w-32 h-24 mb-6 text-brand-teal flex items-center justify-center">
+                        <svg class="w-full h-full" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" /></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 uppercase tracking-wider">Data & AI</h3>
+                    <p class="text-slate-400 leading-relaxed text-sm px-4">Leveraging advanced academic training to architect intelligent systems, predictive models, and sophisticated data-driven solutions.</p>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div class="w-32 h-24 mb-6 text-brand-teal flex items-center justify-center relative">
+                        <svg class="w-full h-full" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" /></svg>
+                        <svg class="w-12 h-12 absolute bottom-0 right-4 text-brand-cyan bg-slate-900 rounded-full" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077l1.41-.513m14.095-5.13l1.41-.513M5.106 17.785l1.15-.964m11.49-9.642l1.149-.964M7.501 19.79l.867-1.326m7.264-11.08l.867-1.326M10.142 20.875l.542-1.5m4.632-12.75l.542-1.5M12 21.25V19.5m0-15V3m0 0a8.995 8.995 0 015.025 1.54M12 3a8.995 8.995 0 00-5.025 1.54" /></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 uppercase tracking-wider">Cloud & DevOps</h3>
+                    <p class="text-slate-400 leading-relaxed text-sm px-4">Architecting resilient CI/CD pipelines, secure database migrations, and real-time industrial automation for enterprise visibility.</p>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div class="w-32 h-24 mb-6 text-brand-teal flex items-center justify-center">
+                        <svg class="w-full h-full" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" /><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" /></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 uppercase tracking-wider">Web & Mobile</h3>
+                    <p class="text-slate-400 leading-relaxed text-sm px-4">Engineering seamless, full-stack applications across SvelteKit, Spring Boot architectures, and custom Android environments.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
     
     <section id="portfolio" class="py-24 px-4 bg-slate-100 dark:bg-brand-darkbg transition-colors duration-300">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-3xl font-bold text-brand-navy dark:text-white mb-12 text-center reveal">Recent Architecture</h2>
             
             <div class="bg-white dark:bg-brand-darkcard rounded-xl shadow-lg overflow-hidden reveal border border-transparent dark:border-slate-700 mb-12">
-                
                 <div class="relative w-full h-64 md:h-96 bg-slate-200 dark:bg-slate-800 border-b dark:border-slate-700 group overflow-hidden">
                     <div class="slide absolute inset-0 transition-opacity duration-500 opacity-100">
                         <img src="diary1.png" alt="Migraine Diary Dashboard View" class="lightbox-trigger w-full h-full object-cover md:object-contain cursor-pointer">
@@ -214,7 +250,6 @@
     </div>
 
     <script>
-        // --- Dark Mode Logic ---
         const themeToggleBtn = document.getElementById('theme-toggle');
         const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
         const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
@@ -251,7 +286,6 @@
         themeToggleBtn.addEventListener('click', toggleTheme);
         mobileThemeToggleBtn.addEventListener('click', toggleTheme);
 
-        // --- Mobile Menu Logic ---
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         
@@ -265,7 +299,6 @@
             });
         });
 
-        // --- Scroll Reveal Animation Logic ---
         const revealElements = document.querySelectorAll('.reveal');
         
         const revealCallback = (entries, observer) => {
@@ -285,7 +318,6 @@
         const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
         revealElements.forEach(el => revealObserver.observe(el));
 
-        // --- Slideshow Logic ---
         let currentSlideIndex = 0;
         const slides = document.querySelectorAll('.slide');
         const dots = document.querySelectorAll('.slide-dot');
@@ -316,10 +348,8 @@
             showSlide(currentSlideIndex);
         }
 
-        // Initialize slideshow
         if(slides.length > 0) showSlide(0);
 
-        // --- Lightbox Logic ---
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         const lightboxClose = document.getElementById('lightbox-close');
@@ -353,14 +383,13 @@
             }
         });
 
-        // --- Formspree AJAX Submission Logic ---
         const form = document.getElementById("contact-form");
         const statusMessage = document.getElementById("form-status");
         const submitButton = document.getElementById("submit-button");
 
         form.addEventListener("submit", async function(event) {
-            event.preventDefault(); // Stop standard redirect
-            submitButton.innerHTML = "Sending..."; // Give user feedback
+            event.preventDefault(); 
+            submitButton.innerHTML = "Sending..."; 
             submitButton.disabled = true;
 
             const data = new FormData(event.target);
@@ -370,9 +399,9 @@
                 headers: { 'Accept': 'application/json' }
             }).then(response => {
                 if (response.ok) {
-                    form.classList.add("hidden"); // Hide the form
-                    statusMessage.classList.remove("hidden"); // Show success message
-                    form.reset(); // Clear the inputs
+                    form.classList.add("hidden"); 
+                    statusMessage.classList.remove("hidden"); 
+                    form.reset(); 
                 } else {
                     response.json().then(data => {
                         if (Object.hasOwn(data, 'errors')) {
