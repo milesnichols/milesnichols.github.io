@@ -12,145 +12,112 @@
         tailwind.config = {
             darkMode: 'class', 
             theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            navy: '#0A192F', teal: '#14b8a6', cyan: '#06b6d4', darkbg: '#0f172a', darkcard: '#1e293b'
-                        }
-                    }
-                }
+                extend: { colors: { brand: { dark: '#0f172a', accent: '#10b981', accentHover: '#059669', card: '#1e293b' } } }
             }
         }
     </script>
     <style>
-        body { cursor: none; }
-        .custom-cursor {
-            position: fixed; top: 0; left: 0; width: 20px; height: 20px; border: 2px solid #14b8a6; border-radius: 50%;
-            pointer-events: none; transform: translate(-50%, -50%); transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
-            z-index: 99999; backdrop-filter: grayscale(1);
-        }
-        .custom-cursor.hovering { width: 50px; height: 50px; background-color: rgba(20, 184, 166, 0.2); border-color: transparent; }
-        
-        /* Blinking cursor for the typing effect */
-        .typing-cursor::after {
-            content: '|';
-            animation: blink 1s step-start infinite;
-            color: #14b8a6;
-        }
+        /* Infinite Marquee Animation */
+        .marquee-container { overflow: hidden; white-space: nowrap; width: 100%; position: relative; padding: 20px 0; }
+        .marquee-content { display: inline-block; animation: marquee 25s linear infinite; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        /* Typing cursor */
+        .typing-cursor::after { content: '|'; animation: blink 1s step-start infinite; color: #10b981; }
         @keyframes blink { 50% { opacity: 0; } }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 dark:bg-brand-darkbg dark:text-slate-200 font-sans antialiased transition-colors duration-300">
+<body class="bg-slate-50 text-slate-800 dark:bg-brand-dark dark:text-slate-200 font-sans antialiased transition-colors duration-300">
 
-    <div class="custom-cursor"></div>
-
-    <nav class="bg-white/80 dark:bg-brand-darkbg/80 backdrop-blur-md shadow-sm fixed w-full z-50 top-0 transition-colors duration-300">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="font-bold text-xl text-brand-navy dark:text-white flex items-center gap-2">
-                <a href="index.html" class="flex items-center gap-2">
-                    <img src="logo.png" alt="Hook Point Solutions Logo" class="h-10 w-auto rounded-md">
-                </a>
-            </div>
-            <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-600 dark:text-slate-300">
-                <a href="about.html" class="hover:text-brand-teal transition cursor-none">About</a>
-                <a href="portfolio.html" class="hover:text-brand-teal transition cursor-none">Portfolio</a>
-                <a href="index.html#contact" class="hover:text-brand-teal transition cursor-none">Contact</a>
-                <button id="theme-toggle" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 cursor-none">🌓</button>
-            </div>
-        </div>
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 bg-white/90 dark:bg-brand-card/90 backdrop-blur-md rounded-full px-6 py-3 shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-slate-200 dark:border-slate-700 z-50 flex items-center gap-6 md:gap-8 transition-colors duration-300">
+        <a href="index.html" class="text-slate-600 dark:text-slate-300 hover:text-brand-accent transition" aria-label="Home">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+        </a>
+        <div class="h-6 w-px bg-slate-300 dark:bg-slate-600"></div> <a href="about.html" class="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-brand-accent transition">About</a>
+        <a href="portfolio.html" class="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-brand-accent transition">Portfolio</a>
+        <a href="index.html#contact" class="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-brand-accent transition">Contact</a>
+        <button id="theme-toggle" class="p-1 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition">🌓</button>
     </nav>
 
-    <section id="home" class="pt-40 pb-20 px-4 text-center bg-brand-navy dark:bg-slate-900 text-white min-h-[80vh] flex items-center justify-center">
-        <div class="max-w-3xl mx-auto flex flex-col items-center" data-aos="fade-up">
-            <h1 class="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight">
+    <section class="pt-40 pb-16 px-4 text-center min-h-[60vh] flex flex-col items-center justify-center">
+        <div class="max-w-3xl mx-auto" data-aos="fade-up">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight text-slate-900 dark:text-white">
                 Precise Technical <br>
-                <span id="typed-text" class="text-brand-teal typing-cursor"></span>
+                <span id="typed-text" class="text-brand-accent typing-cursor"></span>
             </h1>
-            <p class="text-xl text-slate-300 mb-10 leading-relaxed" data-aos="fade-up" data-aos-delay="200">Expert software consulting turning ideas into robust architecture.</p>
-            <a href="index.html#contact" data-aos="zoom-in" data-aos-delay="400" class="inline-block bg-brand-teal hover:bg-brand-cyan text-white font-bold py-3 px-8 rounded-full shadow-lg cursor-none transition-all hover:scale-105">
-                Let's Build Together
-            </a>
+            <p class="text-xl text-slate-600 dark:text-slate-400 mb-10 leading-relaxed max-w-2xl mx-auto">Providing complete software consultancy, from rigorous requirements gathering to end-to-end full-stack delivery.</p>
         </div>
     </section>
 
-    <section id="contact" class="py-24 px-4 max-w-2xl mx-auto text-center relative">
-        <h2 class="text-3xl font-bold text-brand-navy dark:text-white mb-6" data-aos="fade-up">Get In Touch</h2>
-        <p class="text-slate-600 dark:text-slate-400 mb-10" data-aos="fade-up">Ready to discuss your next technical project?</p>
-        
-        <div class="absolute top-1/2 left-0 w-72 h-72 bg-brand-teal/20 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
-        <div class="absolute bottom-0 right-0 w-72 h-72 bg-brand-cyan/20 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
+    <div class="border-y border-slate-200 dark:border-slate-800 bg-white dark:bg-brand-card py-6" data-aos="fade-in">
+        <div class="marquee-container">
+            <div class="marquee-content flex gap-12 items-center text-lg font-bold text-slate-400 dark:text-slate-500">
+                <span>JAVA</span> <span>PYTHON</span> <span>SVELTEKIT</span> <span>SPRING BOOT</span> <span>POSTGRESQL</span> <span>IGNITION SCADA</span> <span>DOCKER</span> <span>REACT</span>
+                <span>JAVA</span> <span>PYTHON</span> <span>SVELTEKIT</span> <span>SPRING BOOT</span> <span>POSTGRESQL</span> <span>IGNITION SCADA</span> <span>DOCKER</span> <span>REACT</span>
+            </div>
+        </div>
+    </div>
 
-        <div class="relative bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-8 rounded-2xl shadow-xl border border-white/40 dark:border-white/10" data-aos="zoom-in">
-            <form id="contact-form" action="https://formspree.io/f/xreaneng" method="POST" class="space-y-6 text-left">
-                <div>
-                    <input type="text" name="name" placeholder="Your Name" required class="w-full px-5 py-4 rounded-lg bg-white/50 dark:bg-slate-900/50 dark:text-white focus:ring-2 focus:ring-brand-teal outline-none cursor-none">
+    <section class="py-24 px-4 max-w-5xl mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">About Hook Point Solutions</h2>
+            <div class="w-20 h-1 bg-brand-accent mx-auto rounded"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <p class="text-lg text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                    Hook Point Solutions LLC operates as an independent software consultancy dedicated to architecting secure, scalable systems. 
+                </p>
+                <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                    Our expertise spans across building modern web applications, implementing real-time industrial data integrations, and developing robust automation pipelines for enterprise environments.
+                </p>
+                <a href="portfolio.html" class="text-brand-accent font-semibold flex items-center gap-2 hover:gap-4 transition-all">View our capabilities <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
+            </div>
+            <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
+                <div class="bg-white dark:bg-brand-card p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
+                    <h3 class="font-bold text-xl text-slate-900 dark:text-white mb-2">Web & Mobile</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400">Custom full-stack architecture using modern frameworks.</p>
                 </div>
-                <div>
-                    <input type="email" name="email" placeholder="you@example.com" required class="w-full px-5 py-4 rounded-lg bg-white/50 dark:bg-slate-900/50 dark:text-white focus:ring-2 focus:ring-brand-teal outline-none cursor-none">
+                <div class="bg-white dark:bg-brand-card p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
+                    <h3 class="font-bold text-xl text-slate-900 dark:text-white mb-2">Data & AI</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400">Intelligent modeling and sophisticated reporting systems.</p>
                 </div>
-                <div>
-                    <textarea name="message" rows="5" placeholder="Project Details" required class="w-full px-5 py-4 rounded-lg bg-white/50 dark:bg-slate-900/50 dark:text-white focus:ring-2 focus:ring-brand-teal outline-none cursor-none"></textarea>
+                <div class="bg-white dark:bg-brand-card p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
+                    <h3 class="font-bold text-xl text-slate-900 dark:text-white mb-2">Automation</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400">CI/CD pipelines and industrial integration.</p>
                 </div>
-                <button type="submit" class="w-full bg-brand-navy dark:bg-brand-teal text-white font-bold py-4 px-8 rounded-lg cursor-none">Send Message</button>
-            </form>
+                <div class="bg-white dark:bg-brand-card p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
+                    <h3 class="font-bold text-xl text-slate-900 dark:text-white mb-2">Security</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400">RBAC systems and sensitive data protection.</p>
+                </div>
+            </div>
         </div>
     </section>
-
-    <footer class="bg-slate-900 text-slate-400 py-10 text-center text-sm border-t border-slate-800">
-        <p>&copy; 2026 Hook Point Solutions. All rights reserved.</p>
-    </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ once: true, duration: 800 });
 
-        // --- Typing Effect Logic ---
+        // Typing Effect
         const words = ["Solutions.", "Architecture.", "Automation.", "Systems."];
         let i = 0, timer;
         const typedText = document.getElementById('typed-text');
-
         function typingEffect() {
             let word = words[i].split('');
             let loopTyping = function() {
-                if (word.length > 0) {
-                    typedText.innerHTML += word.shift();
-                } else {
-                    setTimeout(deletingEffect, 2000); // Wait 2 seconds before deleting
-                    return false;
-                }
-                timer = setTimeout(loopTyping, 100); // Speed of typing
-            };
-            loopTyping();
+                if (word.length > 0) { typedText.innerHTML += word.shift(); } 
+                else { setTimeout(deletingEffect, 2000); return false; }
+                timer = setTimeout(loopTyping, 100);
+            }; loopTyping();
         }
-
         function deletingEffect() {
             let word = words[i].split('');
             let loopDeleting = function() {
-                if (word.length > 0) {
-                    word.pop();
-                    typedText.innerHTML = word.join('');
-                } else {
-                    i = (i === words.length - 1) ? 0 : i + 1; // Cycle through words
-                    setTimeout(typingEffect, 500); // Wait before typing next word
-                    return false;
-                }
-                timer = setTimeout(loopDeleting, 50); // Speed of deleting
-            };
-            loopDeleting();
+                if (word.length > 0) { word.pop(); typedText.innerHTML = word.join(''); } 
+                else { i = (i === words.length - 1) ? 0 : i + 1; setTimeout(typingEffect, 500); return false; }
+                timer = setTimeout(loopDeleting, 50);
+            }; loopDeleting();
         }
-        typingEffect(); // Start the loop
-        // -----------------------------
-
-        // Custom Cursor Logic
-        const cursor = document.querySelector('.custom-cursor');
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
-        document.querySelectorAll('a, button, input, textarea').forEach(el => {
-            el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
-            el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
-        });
+        typingEffect();
 
         // Theme Toggle
         const themeBtn = document.getElementById('theme-toggle');
