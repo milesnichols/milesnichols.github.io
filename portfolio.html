@@ -15,7 +15,6 @@
         }
     </script>
     <style>
-        /* Custom CSS to hide scrollbars on the thumbnail gallery but keep it scrollable */
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
@@ -86,10 +85,15 @@
                 </div>
 
                 <div class="bg-white dark:bg-brand-card rounded-3xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col transition h-full" data-aos="fade-up" data-aos-delay="300">
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">"Grateful" - Digital Journal</h3>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">"Grateful Gig" - Social Gratitude App</h3>
                     <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4 flex-grow">
-                        A clean application designed to promote positive mental health, utilizing modern web architecture.
+                        A full-stack, Twitter-like social media Android app built to promote positive mental health. Users can add friends, share daily gratitude posts, and view a centralized feed of their friends' updates.
                     </p>
+                    <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-500 mb-4">
+                        <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded">Java / Android</span>
+                        <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded">Spring Boot</span>
+                        <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded">MySQL</span>
+                    </div>
                     <div class="w-full bg-slate-100 dark:bg-slate-800/50 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 mt-auto">
                         <div class="aspect-video w-full bg-white dark:bg-slate-900 flex items-center justify-center overflow-hidden">
                             <img id="grateful-main-image" src="" alt="Placeholder" class="max-w-full max-h-full object-contain cursor-pointer">
@@ -173,22 +177,30 @@
         // DYNAMIC SLIDESHOW SYSTEM
         // ==========================================
         
+        // IMPORTANT: Because this is a static site, JavaScript cannot scan your local folders.
+        // You MUST type the path to every image you want to show in these lists below.
+        // You can add as many images as you want, and any file type (.png, .jpg, .gif).
+        // Just follow the format: { src: 'lib/foldername/filename.png', alt: 'Description' }
+        
         const projectImages = {
             migraine: [
                 { src: 'lib/migraine/diary1.png', alt: 'Dashboard overview screen' },
                 { src: 'lib/migraine/diary2.png', alt: 'Entry form details' },
                 { src: 'lib/migraine/diary3.png', alt: 'Analytics and trend reporting' },
                 { src: 'lib/migraine/diary4.png', alt: 'Profile and settings view' }
+                // Add more migraine photos here...
             ],
             fitness: [
-                { src: 'lib/fitness/fitness1.png', alt: 'Fitness App' }, // Updated to .png to match standard web format, adjust if you use jpg
-                { src: 'https://via.placeholder.com/600x400.png?text=Add+More+Fitness+Photos', alt: 'Placeholder' }
+                { src: 'lib/fitness/fitness1.png', alt: 'Fitness App Dashboard' }, 
+                // Add more fitness photos here...
             ],
             grateful: [
                 { src: 'https://via.placeholder.com/600x400.png?text=Add+Grateful+Photos', alt: 'Placeholder' }
+                // Add your grateful photos here...
             ],
             robot: [
                 { src: 'https://via.placeholder.com/600x400.png?text=Add+Robot+Photos', alt: 'Placeholder' }
+                // Add your robot photos here...
             ]
         };
 
@@ -226,12 +238,9 @@
                     thumbImg.src = img.src;
                     thumbImg.alt = `Thumb ${index + 1}`;
                     
-                    // Locked dimensions (w-24 h-14) prevent broken images from expanding and breaking the layout. 
-                    // text-transparent hides the ugly broken image "alt text"
                     thumbImg.classList.add('h-14', 'w-24', 'object-cover', 'border-2', 'border-transparent', 'rounded-md', 'cursor-pointer', 'shrink-0', 'transition-all', 'hover:border-brand-accent/50', 'snap-center', 'bg-slate-200', 'dark:bg-slate-700', 'text-transparent');
                     thumbImg.id = `${this.projectId}-thumb-${index}`;
                     
-                    // Add error handling to hide broken thumbnails smoothly
                     thumbImg.onerror = function() {
                         this.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" fill="%23cbd5e1"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="12" fill="%2364748b">No Image</text></svg>';
                     };
