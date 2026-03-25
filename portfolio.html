@@ -29,14 +29,21 @@
     </nav>
 
     <section class="pt-32 md:pt-40 pb-24 px-4 max-w-6xl mx-auto flex-grow w-full">
-        <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
+        <div class="text-center mb-16" data-aos="fade-up">
             <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-4">Engineering Portfolio</h1>
-            <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400">Architecting full-stack solutions, mobile apps, and autonomous systems.</p>
+            <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400">Architecting full-stack web products and solving complex system operations.</p>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[auto] md:auto-rows-[350px]">
+        <div class="mb-12 border-b border-slate-200 dark:border-slate-800 pb-4 flex items-center gap-4" data-aos="fade-up">
+            <div class="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-900/40 text-brand-accent flex items-center justify-center">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Web & Mobile Applications</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20 auto-rows-[auto] md:auto-rows-[380px]">
             
-            <div class="md:col-span-2 md:row-span-2 bg-white dark:bg-brand-card rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between group overflow-hidden relative" data-aos="fade-up">
+            <div class="md:col-span-2 bg-white dark:bg-brand-card rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between group overflow-hidden relative" data-aos="fade-up" data-aos-delay="100">
                 <div class="absolute top-0 right-0 w-64 h-64 bg-brand-accent/10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
                 <div class="z-10">
                     <div class="flex flex-wrap gap-2 mb-4 text-xs font-bold text-brand-accent">
@@ -49,50 +56,71 @@
                         Designed and deployed a secure, full-stack health web application. Engineered a robust RBAC system to protect sensitive patient data while providing dynamic reporting features and interactive visualizations for trend identification.
                     </p>
                 </div>
-                <div class="w-full h-48 md:h-64 mt-8 bg-slate-100 dark:bg-slate-800 rounded-xl overflow-hidden shadow-inner border border-slate-200 dark:border-slate-700 z-10">
+                <div class="w-full h-48 md:h-64 mt-8 bg-slate-100 dark:bg-slate-800 rounded-xl overflow-hidden shadow-inner border border-slate-200 dark:border-slate-700 z-10 shrink-0">
                      <img src="diary1.png" alt="Dashboard" class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition duration-500">
                 </div>
             </div>
 
-            <div class="bg-white dark:bg-brand-card rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between hover:border-brand-accent transition" data-aos="fade-up" data-aos-delay="100">
-                <div>
-                    <h3 class="text-lg md:text-xl font-bold text-slate-900 dark:text-white mb-2">Industrial Systems Integration</h3>
-                    <h4 class="text-xs md:text-sm font-semibold text-brand-accent mb-4">Innovative Systems</h4>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
-                        Spearheaded end-to-end database migrations from MS SQL Server to PostgreSQL. Engineered real-time data systems for Tyson Foods, managing transaction groups and vision modules.
+            <div class="bg-white dark:bg-brand-card rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col hover:border-brand-accent transition" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex-grow">
+                    <h3 class="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-4">Full-Stack Android Architecture</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                        Developed complex, native Android applications utilizing Java and XML. Built custom Spring Boot backends featuring real-time data synchronization via WebSockets. Automated testing and deployments by integrating robust CI/CD pipelines.
                     </p>
                 </div>
-                <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-500 mt-4 md:mt-0">
-                    <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded">Ignition SCADA</span>
-                    <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded">SQL</span>
-                </div>
-            </div>
-
-            <div class="bg-white dark:bg-brand-card rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between hover:border-brand-accent transition" data-aos="fade-up" data-aos-delay="200">
-                <div>
-                    <h3 class="text-lg md:text-xl font-bold text-slate-900 dark:text-white mb-2">Full-Stack Android Architecture</h3>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
-                        Developed complex Android applications featuring real-time data synchronization via WebSockets. Automated deployments and testing by integrating robust CI/CD pipelines.
-                    </p>
-                </div>
-                <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-500 mt-4 md:mt-0">
-                    <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded">Java / XML</span>
+                <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-500 mt-auto">
+                    <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded">Native Android</span>
                     <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded">WebSockets</span>
                     <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded">RESTful APIs</span>
                 </div>
             </div>
+        </div>
 
-            <div class="bg-white dark:bg-brand-card rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between hover:border-brand-accent transition md:col-span-3 lg:col-span-1" data-aos="fade-up" data-aos-delay="300">
-                <div>
-                    <h3 class="text-lg md:text-xl font-bold text-slate-900 dark:text-white mb-2">Autonomous Robot Navigation</h3>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
-                        Led a 6-person engineering team to build a microcontroller-based autonomous robot. Architected the integration of ADC/Ping sensors and developed Python-based control algorithms for precise movement.
+        <div class="mb-12 border-b border-slate-200 dark:border-slate-800 pb-4 flex items-center gap-4" data-aos="fade-up">
+            <div class="w-8 h-8 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 flex items-center justify-center">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Systems Engineering & Automation</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[auto] md:auto-rows-[minmax(300px,auto)]">
+            
+            <div class="md:col-span-2 bg-white dark:bg-brand-card rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between relative overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
+                <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none opacity-50"></div>
+                
+                <div class="relative z-10 flex-grow">
+                    <h4 class="text-sm font-extrabold text-brand-accent mb-2 uppercase tracking-wide">Client: Innovative Systems / Tyson Foods</h4>
+                    <h3 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4">Industrial Database Migration & SCADA Integration</h3>
+                    <div class="space-y-4 text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl">
+                        <p>
+                            Operated as an automation consultant to untangle and migrate highly complex industrial data systems. Spearheaded the end-to-end migration of a critical production database from MS SQL Server to PostgreSQL.
+                        </p>
+                        <ul class="list-disc list-inside space-y-1 ml-2 text-sm font-medium">
+                            <li>Converted complex legacy transaction groups.</li>
+                            <li>Optimized high-volume report queries.</li>
+                            <li>Engineered real-time data visibility pipelines managing vision modules.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="relative z-10 flex flex-wrap gap-2 mt-8 text-xs font-bold text-slate-500">
+                    <span class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-md shadow-sm">Ignition SCADA</span>
+                    <span class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-md shadow-sm">PostgreSQL</span>
+                    <span class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-md shadow-sm">MS SQL Server</span>
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-brand-card rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col hover:border-brand-accent transition" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex-grow">
+                    <h3 class="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-4">Autonomous Robot Navigation Algorithms</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                        Led a 6-person engineering team to build a microcontroller-based autonomous robot. Architected the integration of ADC, Ping, and Servo sensors. Developed advanced Python-based control algorithms ensuring precise, real-time spatial navigation.
                     </p>
                 </div>
-                <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-500 mt-4 md:mt-0">
-                    <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded">Python GUI</span>
+                <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-500 mt-auto">
                     <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded">Microcontrollers</span>
-                    <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded">Sensors</span>
+                    <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded">Python GUI</span>
+                    <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded">Sensor Integration</span>
                 </div>
             </div>
 
