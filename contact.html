@@ -14,19 +14,8 @@
             theme: { extend: { colors: { brand: { dark: '#0f172a', accent: '#10b981', card: '#1e293b' } } } }
         }
     </script>
-    <style>
-        body { cursor: none; }
-        .custom-cursor {
-            position: fixed; top: 0; left: 0; width: 20px; height: 20px; border: 2px solid #10b981; border-radius: 50%;
-            pointer-events: none; transform: translate(-50%, -50%); transition: width 0.2s, height 0.2s, background-color 0.2s;
-            z-index: 99999; backdrop-filter: grayscale(1);
-        }
-        .custom-cursor.hovering { width: 50px; height: 50px; background-color: rgba(16, 185, 129, 0.2); border-color: transparent; }
-    </style>
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-brand-dark dark:text-slate-200 font-sans antialiased transition-colors duration-300 min-h-screen flex flex-col">
-
-    <div class="custom-cursor"></div>
 
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 bg-white/90 dark:bg-brand-card/90 backdrop-blur-md rounded-full px-6 py-3 shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-slate-200 dark:border-slate-700 z-50 flex items-center gap-6 md:gap-8 transition-colors duration-300">
         <a href="index.html" class="text-slate-600 dark:text-slate-300 hover:text-brand-accent transition" aria-label="Home">
@@ -53,19 +42,19 @@
                 </p>
                 
                 <div class="space-y-6">
-                    <a href="mailto:miles@voilatech.com" class="flex items-center gap-4 text-slate-700 dark:text-slate-300 hover:text-brand-accent transition group cursor-none">
+                    <a href="mailto:miles@voilatech.com" class="flex items-center gap-4 text-slate-700 dark:text-slate-300 hover:text-brand-accent transition group">
                         <div class="w-12 h-12 rounded-full bg-white dark:bg-brand-card shadow-sm border border-slate-200 dark:border-slate-700 flex items-center justify-center group-hover:border-brand-accent transition">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         </div>
                         <span class="font-medium text-lg">miles@voilatech.com</span>
                     </a>
-                    <a href="tel:7123558178" class="flex items-center gap-4 text-slate-700 dark:text-slate-300 hover:text-brand-accent transition group cursor-none">
+                    <a href="tel:7123558178" class="flex items-center gap-4 text-slate-700 dark:text-slate-300 hover:text-brand-accent transition group">
                         <div class="w-12 h-12 rounded-full bg-white dark:bg-brand-card shadow-sm border border-slate-200 dark:border-slate-700 flex items-center justify-center group-hover:border-brand-accent transition">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                         </div>
                         <span class="font-medium text-lg">712.355.8178</span>
                     </a>
-                    <a href="https://www.linkedin.com/in/miles-nichols" target="_blank" class="flex items-center gap-4 text-slate-700 dark:text-slate-300 hover:text-brand-accent transition group cursor-none">
+                    <a href="https://www.linkedin.com/in/miles-nichols" target="_blank" class="flex items-center gap-4 text-slate-700 dark:text-slate-300 hover:text-brand-accent transition group">
                         <div class="w-12 h-12 rounded-full bg-white dark:bg-brand-card shadow-sm border border-slate-200 dark:border-slate-700 flex items-center justify-center group-hover:border-brand-accent transition">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                         </div>
@@ -78,17 +67,17 @@
                 <form id="contact-form" action="https://formspree.io/f/xreaneng" method="POST" class="space-y-6">
                     <div>
                         <label for="name" class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Name</label>
-                        <input type="text" id="name" name="name" placeholder="John Doe" required class="w-full px-5 py-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 text-slate-900 dark:text-white focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 transition cursor-none">
+                        <input type="text" id="name" name="name" placeholder="John Doe" required class="w-full px-5 py-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 text-slate-900 dark:text-white focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 transition">
                     </div>
                     <div>
                         <label for="email" class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Email</label>
-                        <input type="email" id="email" name="email" placeholder="you@example.com" required class="w-full px-5 py-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 text-slate-900 dark:text-white focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 transition cursor-none">
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required class="w-full px-5 py-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 text-slate-900 dark:text-white focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 transition">
                     </div>
                     <div>
                         <label for="message" class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Project Details</label>
-                        <textarea id="message" name="message" rows="4" placeholder="How can I help you?" required class="w-full px-5 py-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 text-slate-900 dark:text-white focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 transition resize-none cursor-none"></textarea>
+                        <textarea id="message" name="message" rows="4" placeholder="How can I help you?" required class="w-full px-5 py-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 text-slate-900 dark:text-white focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 transition resize-none"></textarea>
                     </div>
-                    <button type="submit" id="submit-button" class="w-full bg-slate-900 dark:bg-brand-accent hover:bg-slate-800 dark:hover:bg-emerald-500 text-white font-bold py-4 px-8 rounded-xl transition duration-300 shadow-lg flex justify-center items-center gap-2 cursor-none">
+                    <button type="submit" id="submit-button" class="w-full bg-slate-900 dark:bg-brand-accent hover:bg-slate-800 dark:hover:bg-emerald-500 text-white font-bold py-4 px-8 rounded-xl transition duration-300 shadow-lg flex justify-center items-center gap-2">
                         <span>Send Message</span>
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </button>
@@ -109,16 +98,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ once: true, duration: 800 });
-
-        // Custom Cursor
-        const cursor = document.querySelector('.custom-cursor');
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px';
-        });
-        document.querySelectorAll('a, button, input, textarea').forEach(el => {
-            el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
-            el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
-        });
 
         // Theme Toggle
         const themeBtn = document.getElementById('theme-toggle');
