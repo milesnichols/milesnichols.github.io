@@ -14,6 +14,11 @@
             theme: { extend: { colors: { brand: { dark: '#0f172a', accent: '#10b981', card: '#1e293b' } } } }
         }
     </script>
+    <style>
+        /* Custom CSS to hide scrollbars on the thumbnail gallery but keep it scrollable */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-brand-dark dark:text-slate-200 font-sans antialiased transition-colors duration-300 overflow-x-hidden w-full max-w-[100vw] flex flex-col min-h-screen">
 
@@ -34,78 +39,84 @@
             <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400">Architecting full-stack web products and solving complex system operations.</p>
         </div>
         
-        <div class="mb-12 border-b border-slate-200 dark:border-slate-800 pb-4 flex items-center gap-4" data-aos="fade-up">
+        <div class="mb-8 border-b border-slate-200 dark:border-slate-800 pb-4 flex items-center gap-4" data-aos="fade-up">
             <div class="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-900/40 text-brand-accent flex items-center justify-center">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
             </div>
             <h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Web & Mobile Applications</h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20 auto-rows-[auto] md:auto-rows-[380px]">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-20 items-start">
             
-            <div class="md:col-span-2 bg-white dark:bg-brand-card rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between group overflow-hidden relative" data-aos="fade-up" data-aos-delay="100">
+            <div class="lg:col-span-2 bg-white dark:bg-brand-card rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col relative overflow-hidden h-full" data-aos="fade-up" data-aos-delay="100">
                 <div class="absolute top-0 right-0 w-64 h-64 bg-brand-accent/10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
-                <div class="z-10">
+                <div class="z-10 flex-grow">
                     <div class="flex flex-wrap gap-2 mb-4 text-xs font-bold text-brand-accent">
                         <span class="px-3 py-1 bg-emerald-50 dark:bg-emerald-900/30 rounded-full">SvelteKit</span>
                         <span class="px-3 py-1 bg-emerald-50 dark:bg-emerald-900/30 rounded-full">Spring Boot</span>
                         <span class="px-3 py-1 bg-emerald-50 dark:bg-emerald-900/30 rounded-full">PostgreSQL</span>
                     </div>
                     <h3 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4">Migraine Diary Tracking Application</h3>
-                    <p class="text-sm md:text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl">
+                    <p class="text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
                         Designed and deployed a secure, full-stack health web application. Engineered a robust RBAC system to protect sensitive patient data while providing dynamic reporting features and interactive visualizations for trend identification.
                     </p>
                 </div>
                 
-                <div class="w-full h-auto mt-8 bg-slate-100 dark:bg-slate-800 rounded-xl overflow-hidden shadow-inner border border-slate-200 dark:border-slate-700 z-10 shrink-0">
-                     <img id="migraine-main-image" src="" alt="Project screenshot, clickable to cycle through photos" class="w-full h-48 md:h-64 object-contain cursor-pointer" aria-live="polite">
-                     <div id="migraine-thumbnails" class="flex gap-2 p-2 bg-slate-200/50 dark:bg-slate-900/50 overflow-x-auto h-20 scrollbar-thin"></div>
+                <div class="w-full bg-slate-100 dark:bg-slate-800/50 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 z-10 mt-auto">
+                    <div class="aspect-video w-full bg-white dark:bg-slate-900 flex items-center justify-center overflow-hidden">
+                        <img id="migraine-main-image" src="" alt="Screenshot" class="max-w-full max-h-full object-contain cursor-pointer transition-transform duration-300 hover:scale-[1.02]">
+                    </div>
+                    <div id="migraine-thumbnails" class="flex gap-2 p-3 overflow-x-auto hide-scrollbar border-t border-slate-200 dark:border-slate-700 snap-x"></div>
                 </div>
             </div>
 
-            <div class="bg-white dark:bg-brand-card rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col hover:border-brand-accent transition" data-aos="fade-up" data-aos-delay="200">
-                <div class="flex-grow">
-                    <h3 class="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-4">Full-Stack Fitness Tracking Platform</h3>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                        An unreleased platform designed for holistic wellness, leveraging your full technical stack to provide a unified health overview. *Images need to be added to your fitness folder!*
+            <div class="flex flex-col gap-6 lg:col-span-1 h-full">
+                
+                <div class="bg-white dark:bg-brand-card rounded-3xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col transition h-full" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Full-Stack Fitness Tracking Platform</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4 flex-grow">
+                        An unreleased platform designed for holistic wellness, leveraging your full technical stack to provide a unified health overview.
                     </p>
+                    <div class="w-full bg-slate-100 dark:bg-slate-800/50 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 mt-auto">
+                        <div class="aspect-video w-full bg-white dark:bg-slate-900 flex items-center justify-center overflow-hidden">
+                            <img id="fitness-main-image" src="" alt="Placeholder" class="max-w-full max-h-full object-contain cursor-pointer">
+                        </div>
+                        <div id="fitness-thumbnails" class="flex gap-2 p-2 overflow-x-auto hide-scrollbar border-t border-slate-200 dark:border-slate-700 snap-x"></div>
+                    </div>
                 </div>
-                <div class="w-full h-auto mt-auto bg-slate-100 dark:bg-slate-800 rounded-xl overflow-hidden shadow-inner border border-slate-200 dark:border-slate-700">
-                     <img id="fitness-main-image" src="" alt="Project placeholder, add photos to folder" class="w-full h-40 object-contain cursor-pointer">
-                     <div id="fitness-thumbnails" class="flex gap-1 p-1 bg-slate-200/50 dark:bg-slate-900/50 overflow-x-auto h-16 scrollbar-thin"></div>
-                </div>
-            </div>
-            
-            <div class="bg-white dark:bg-brand-card rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col hover:border-brand-accent transition md:col-span-1" data-aos="fade-up" data-aos-delay="300">
-                <div class="flex-grow">
-                    <h3 class="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-4">"Grateful" - Digital Gratitude Journal</h3>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                        A clean, unreleased application designed to promote positive mental health, utilizing the modern web architecture seen in your Miguel Diary project. *Images need to be added to your grateful folder!*
+
+                <div class="bg-white dark:bg-brand-card rounded-3xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col transition h-full" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">"Grateful" - Digital Journal</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4 flex-grow">
+                        A clean application designed to promote positive mental health, utilizing modern web architecture.
                     </p>
+                    <div class="w-full bg-slate-100 dark:bg-slate-800/50 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 mt-auto">
+                        <div class="aspect-video w-full bg-white dark:bg-slate-900 flex items-center justify-center overflow-hidden">
+                            <img id="grateful-main-image" src="" alt="Placeholder" class="max-w-full max-h-full object-contain cursor-pointer">
+                        </div>
+                        <div id="grateful-thumbnails" class="flex gap-2 p-2 overflow-x-auto hide-scrollbar border-t border-slate-200 dark:border-slate-700 snap-x"></div>
+                    </div>
                 </div>
-                <div class="w-full h-auto mt-auto bg-slate-100 dark:bg-slate-800 rounded-xl overflow-hidden shadow-inner border border-slate-200 dark:border-slate-700">
-                     <img id="grateful-main-image" src="" alt="Project placeholder, add photos to folder" class="w-full h-40 object-contain cursor-pointer">
-                     <div id="grateful-thumbnails" class="flex gap-1 p-1 bg-slate-200/50 dark:bg-slate-900/50 overflow-x-auto h-16 scrollbar-thin"></div>
-                </div>
+
             </div>
         </div>
 
-        <div class="mb-12 border-b border-slate-200 dark:border-slate-800 pb-4 flex items-center gap-4" data-aos="fade-up">
+        <div class="mb-8 border-b border-slate-200 dark:border-slate-800 pb-4 flex items-center gap-4" data-aos="fade-up">
             <div class="w-8 h-8 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 flex items-center justify-center">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg>
             </div>
             <h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Systems Engineering & Automation</h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[auto] md:auto-rows-[minmax(300px,auto)]">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
             
-            <div class="md:col-span-2 bg-white dark:bg-brand-card rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col justify-between relative overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
+            <div class="lg:col-span-2 bg-white dark:bg-brand-card rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col relative overflow-hidden group h-full" data-aos="fade-up" data-aos-delay="100">
                 <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none opacity-50"></div>
                 
                 <div class="relative z-10 flex-grow">
                     <h4 class="text-sm font-extrabold text-brand-accent mb-2 uppercase tracking-wide">Client: Innovative Systems / Tyson Foods</h4>
                     <h3 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4">Industrial Database Migration & SCADA Integration</h3>
-                    <div class="space-y-4 text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl">
+                    <div class="space-y-4 text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl mb-6">
                         <p>
                             Operated as an automation consultant to untangle and migrate highly complex industrial data systems. Spearheaded the end-to-end migration of a critical production database from MS SQL Server to PostgreSQL.
                         </p>
@@ -116,24 +127,25 @@
                         </ul>
                     </div>
                 </div>
-                
-                <div class="relative z-10 flex flex-wrap gap-2 mt-8 text-xs font-bold text-slate-500">
+                <div class="relative z-10 flex flex-wrap gap-2 mt-auto text-xs font-bold text-slate-500">
                     <span class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-md shadow-sm">Ignition SCADA</span>
                     <span class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-md shadow-sm">PostgreSQL</span>
                     <span class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-md shadow-sm">MS SQL Server</span>
                 </div>
             </div>
 
-            <div class="bg-white dark:bg-brand-card rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col hover:border-brand-accent transition" data-aos="fade-up" data-aos-delay="200">
-                <div class="flex-grow">
-                    <h3 class="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-4">Autonomous Robot Navigation Algorithms</h3>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                        Led a 6-person engineering team to develop control algorithms for precise spatial navigation. *Images need to be added to your robot folder!*
+            <div class="flex flex-col gap-6 lg:col-span-1 h-full">
+                <div class="bg-white dark:bg-brand-card rounded-3xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col transition h-full" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Autonomous Robot Navigation</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4 flex-grow">
+                        Led a 6-person team to develop control algorithms for precise spatial navigation using Python and Microcontrollers.
                     </p>
-                </div>
-                <div class="w-full h-auto mt-auto bg-slate-100 dark:bg-slate-800 rounded-xl overflow-hidden shadow-inner border border-slate-200 dark:border-slate-700">
-                     <img id="robot-main-image" src="" alt="Project placeholder, add photos to folder" class="w-full h-40 object-contain cursor-pointer">
-                     <div id="robot-thumbnails" class="flex gap-1 p-1 bg-slate-200/50 dark:bg-slate-900/50 overflow-x-auto h-16 scrollbar-thin"></div>
+                    <div class="w-full bg-slate-100 dark:bg-slate-800/50 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 mt-auto">
+                        <div class="aspect-video w-full bg-white dark:bg-slate-900 flex items-center justify-center overflow-hidden">
+                            <img id="robot-main-image" src="" alt="Placeholder" class="max-w-full max-h-full object-contain cursor-pointer">
+                        </div>
+                        <div id="robot-thumbnails" class="flex gap-2 p-2 overflow-x-auto hide-scrollbar border-t border-slate-200 dark:border-slate-700 snap-x"></div>
+                    </div>
                 </div>
             </div>
 
@@ -148,7 +160,6 @@
     <script>
         AOS.init({ once: true, duration: 800 });
 
-        // Theme Toggle Logic
         const themeBtn = document.getElementById('theme-toggle');
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
@@ -162,7 +173,6 @@
         // DYNAMIC SLIDESHOW SYSTEM
         // ==========================================
         
-        // Define project image sets based on your updated directory structure
         const projectImages = {
             migraine: [
                 { src: 'lib/migraine/diary1.png', alt: 'Dashboard overview screen' },
@@ -171,18 +181,14 @@
                 { src: 'lib/migraine/diary4.png', alt: 'Profile and settings view' }
             ],
             fitness: [
-                // PLACEHOLDER: I assume jpg, but you should add actual images to the folder.
-                { src: 'lib/fitness/fitness1.jpg', alt: 'Fitness app screenshot 1' },
-                { src: 'https://via.placeholder.com/600x400.png?text=Add+Fitness+Photos', alt: 'Add photos to lib/fitness/' }
+                { src: 'lib/fitness/fitness1.png', alt: 'Fitness App' }, // Updated to .png to match standard web format, adjust if you use jpg
+                { src: 'https://via.placeholder.com/600x400.png?text=Add+More+Fitness+Photos', alt: 'Placeholder' }
             ],
             grateful: [
-                // PLACEHOLDER: add images to folder for detection.
-                { src: 'https://via.placeholder.com/600x400.png?text=Add+Grateful+Photos', alt: 'Add photos to lib/grateful/' }
+                { src: 'https://via.placeholder.com/600x400.png?text=Add+Grateful+Photos', alt: 'Placeholder' }
             ],
             robot: [
-                // PLACEHOLDER: I assume jpg, but you should add actual images to the folder.
-                { src: 'lib/robot/robot1.jpg', alt: 'Autonomous robot view' },
-                { src: 'https://via.placeholder.com/600x400.png?text=Add+Robot+Photos', alt: 'Add photos to lib/robot/' }
+                { src: 'https://via.placeholder.com/600x400.png?text=Add+Robot+Photos', alt: 'Placeholder' }
             ]
         };
 
@@ -197,40 +203,39 @@
             }
 
             init() {
-                // Set initial main image
                 this.updateMainImage();
-                // Add click listener to main image to cycle
                 this.mainImageEl.addEventListener('click', () => this.cycleImage());
-                // Dynamically generate thumbnails
                 this.generateThumbnails();
             }
 
-            // Sets the main image and active thumbnail based on currentIndex
             updateMainImage() {
                 const current = this.images[this.currentIndex];
                 this.mainImageEl.src = current.src;
-                // Add helpful explanatory text to alt for main image
-                this.mainImageEl.alt = `${current.alt} (Project photo ${this.currentIndex + 1} of ${this.images.length}. Click to cycle.)`;
+                this.mainImageEl.alt = current.alt;
                 this.updateActiveThumbnail();
             }
 
-            // Advances to the next image, wrapping around
             cycleImage() {
                 this.currentIndex = (this.currentIndex + 1) % this.images.length;
                 this.updateMainImage();
             }
 
-            // Creates clickable thumbnail images
             generateThumbnails() {
                 this.images.forEach((img, index) => {
                     const thumbImg = document.createElement('img');
                     thumbImg.src = img.src;
-                    thumbImg.alt = `View project photo ${index + 1}`;
-                    // Apply styles for a small, clickable thumb
-                    thumbImg.classList.add('h-16', 'w-auto', 'object-contain', 'border-2', 'border-transparent', 'rounded-lg', 'cursor-pointer', 'shrink-0', 'transition', 'hover:border-slate-400');
+                    thumbImg.alt = `Thumb ${index + 1}`;
+                    
+                    // Locked dimensions (w-24 h-14) prevent broken images from expanding and breaking the layout. 
+                    // text-transparent hides the ugly broken image "alt text"
+                    thumbImg.classList.add('h-14', 'w-24', 'object-cover', 'border-2', 'border-transparent', 'rounded-md', 'cursor-pointer', 'shrink-0', 'transition-all', 'hover:border-brand-accent/50', 'snap-center', 'bg-slate-200', 'dark:bg-slate-700', 'text-transparent');
                     thumbImg.id = `${this.projectId}-thumb-${index}`;
                     
-                    // Click sets this image as main
+                    // Add error handling to hide broken thumbnails smoothly
+                    thumbImg.onerror = function() {
+                        this.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" fill="%23cbd5e1"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="12" fill="%2364748b">No Image</text></svg>';
+                    };
+                    
                     thumbImg.addEventListener('click', () => {
                         this.currentIndex = index;
                         this.updateMainImage();
@@ -240,14 +245,12 @@
                 this.updateActiveThumbnail();
             }
 
-            // Highlights the current thumbnail and ensures it's visible in the scroll
             updateActiveThumbnail() {
                 const thumbs = this.thumbnailsEl.querySelectorAll('img');
                 thumbs.forEach((thumb, index) => {
                     if (index === this.currentIndex) {
                         thumb.classList.add('border-brand-accent');
                         thumb.classList.remove('border-transparent');
-                        // Ensure the active thumb is scrolled into view smoothly
                         thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
                     } else {
                         thumb.classList.remove('border-brand-accent');
@@ -257,15 +260,10 @@
             }
         }
 
-        // Initialize slideshows for all projects
         document.addEventListener('DOMContentLoaded', () => {
-            // Migraine Diary
             new ProjectSlideshow('migraine', projectImages.migraine);
-            // Fitness (Placeholder until you add photos to folder)
             new ProjectSlideshow('fitness', projectImages.fitness);
-            // Grateful (Placeholder until you add photos to folder)
             new ProjectSlideshow('grateful', projectImages.grateful);
-            // Robot (Placeholder until you add photos to folder)
             new ProjectSlideshow('robot', projectImages.robot);
         });
 
