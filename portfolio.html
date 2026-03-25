@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin" />
+    <title>Portfolio | Hook Point Solutions</title>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class', 
+            theme: {
+                extend: { colors: { brand: { navy: '#0A192F', teal: '#14b8a6', cyan: '#06b6d4', darkbg: '#0f172a', darkcard: '#1e293b' } } }
+            }
+        }
+    </script>
+    <style>
+        body { cursor: none; }
+        .custom-cursor {
+            position: fixed; top: 0; left: 0; width: 20px; height: 20px; border: 2px solid #14b8a6; border-radius: 50%;
+            pointer-events: none; transform: translate(-50%, -50%); transition: width 0.2s, height 0.2s, background-color 0.2s;
+            z-index: 99999; backdrop-filter: grayscale(1);
+        }
+        .custom-cursor.hovering { width: 50px; height: 50px; background-color: rgba(20, 184, 166, 0.2); border-color: transparent; }
+        
+        /* Ensures the tilt cards look smooth */
+        .tilt-card { transform-style: preserve-3d; }
+        .tilt-card-content { transform: translateZ(30px); } /* Pushes content forward for 3D depth */
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-brand-darkbg dark:text-slate-200 font-sans antialiased transition-colors duration-300">
+
+    <div class="custom-cursor"></div>
+
+    <nav class="bg-white/80 dark:bg-brand-darkbg/80 backdrop-blur-md shadow-sm fixed w-full z-50 top-0 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="font-bold text-xl text-brand-navy dark:text-white flex items-center gap-2">
+                <a href="index.html" class="flex items-center gap-2">
+                    <img src="logo.png" alt="Hook Point Solutions Logo" class="h-10 w-auto rounded-md">
+                </a>
+            </div>
+            <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-600 dark:text-slate-300">
+                <a href="about.html" class="hover:text-brand-teal transition cursor-none">About</a>
+                <a href="portfolio.html" class="text-brand-teal transition cursor-none">Portfolio</a>
+                <a href="index.html#contact" class="hover:text-brand-teal transition cursor-none">Contact</a>
+                <button id="theme-toggle" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 cursor-none">🌓</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-24 px-4 min-h-screen">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-brand-navy dark:text-white mb-4">Customer Case Studies</h1>
+                <p class="text-xl text-slate-500 dark:text-slate-400">Deep dives into recent technical solutions.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <div class="tilt-card bg-white dark:bg-brand-darkcard rounded-2xl shadow-lg border border-transparent dark:border-slate-700 cursor-none" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-8 tilt-card-content">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-bold text-brand-navy dark:text-white">Migraine Diary App</h3>
+                        </div>
+                        <div class="flex gap-2 mb-6 text-xs text-brand-teal font-semibold flex-wrap">
+                            <span class="px-3 py-1 bg-teal-50 dark:bg-teal-900/30 rounded-full border border-teal-200 dark:border-teal-800">SvelteKit</span>
+                            <span class="px-3 py-1 bg-teal-50 dark:bg-teal-900/30 rounded-full border border-teal-200 dark:border-teal-800">Spring Boot</span>
+                            <span class="px-3 py-1 bg-teal-50 dark:bg-teal-900/30 rounded-full border border-teal-200 dark:border-teal-800">PostgreSQL</span>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                            A comprehensive, full-stack health tracking application designed to facilitate detailed symptom logging and clinical oversight. Includes secure role-based auth and comprehensive historical data views.
+                        </p>
+                        <div class="w-full h-48 bg-slate-200 dark:bg-slate-800 rounded-lg flex items-center justify-center overflow-hidden">
+                            <img src="diary1.png" alt="App Preview" class="w-full h-full object-cover mix-blend-multiply dark:mix-blend-lighten opacity-80">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tilt-card bg-white dark:bg-brand-darkcard rounded-2xl shadow-lg border border-transparent dark:border-slate-700 cursor-none" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-8 tilt-card-content">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-bold text-brand-navy dark:text-white">Industrial Automation</h3>
+                        </div>
+                        <div class="flex gap-2 mb-6 text-xs text-brand-teal font-semibold flex-wrap">
+                            <span class="px-3 py-1 bg-teal-50 dark:bg-teal-900/30 rounded-full border border-teal-200 dark:border-teal-800">Ignition SCADA</span>
+                            <span class="px-3 py-1 bg-teal-50 dark:bg-teal-900/30 rounded-full border border-teal-200 dark:border-teal-800">MS SQL to Postgres</span>
+                        </div>
+                        <h4 class="text-sm font-semibold text-brand-teal mb-3">Tyson Foods Integration</h4>
+                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Engineered the integration of real-time industrial data systems. Spearheaded the end-to-end migration of a crucial database converting complex transaction groups and high-volume report queries.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    
+    <script>
+        AOS.init({ once: true, duration: 800 });
+
+        // Custom Cursor Logic
+        const cursor = document.querySelector('.custom-cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px';
+        });
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+        });
+
+        // Theme Toggle
+        const themeBtn = document.getElementById('theme-toggle');
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+        themeBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('color-theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+        });
+    </script>
+</body>
+</html>
