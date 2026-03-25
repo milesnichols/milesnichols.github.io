@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hook Point Solutions | Software Consulting</title>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -24,20 +27,40 @@
         }
     </script>
     <style>
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
+        /* Hide the default cursor */
+        body {
+            cursor: none;
         }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+
+        /* Custom Cursor Styling */
+        .custom-cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #14b8a6; /* Brand Teal */
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
+            z-index: 99999;
+            backdrop-filter: grayscale(1);
+        }
+
+        .custom-cursor.hovering {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(20, 184, 166, 0.2);
+            border-color: transparent;
         }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-brand-darkbg dark:text-slate-200 font-sans antialiased transition-colors duration-300">
 
-    <nav class="bg-white/90 dark:bg-brand-darkbg/90 backdrop-blur-md shadow-sm fixed w-full z-50 top-0 transition-colors duration-300">
+    <div class="custom-cursor"></div>
+
+    <nav class="bg-white/80 dark:bg-brand-darkbg/80 backdrop-blur-md shadow-sm fixed w-full z-50 top-0 transition-colors duration-300">
         <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
             <div class="font-bold text-xl text-brand-navy dark:text-white flex items-center gap-2">
                 <a href="index.html" class="flex items-center gap-2">
@@ -72,26 +95,26 @@
     </nav>
 
     <section id="home" class="pt-40 pb-20 px-4 text-center bg-brand-navy dark:bg-slate-900 text-white transition-colors duration-300">
-        <div class="max-w-3xl mx-auto reveal flex flex-col items-center">
+        <div class="max-w-3xl mx-auto flex flex-col items-center" data-aos="fade-up" data-aos-duration="1000">
             <img src="logo.png" alt="Hook Point Solutions Large Logo" class="h-40 md:h-56 mb-8 drop-shadow-[0_0_20px_rgba(20,184,166,0.2)]">
             <h1 class="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight">Precise Technical <span class="text-brand-teal">Solutions.</span></h1>
-            <p class="text-xl text-slate-300 mb-10 leading-relaxed">Expert software consulting turning ideas and problems into complete solutions.</p>
-            <a href="index.html#contact" class="inline-block bg-brand-teal hover:bg-brand-cyan text-white font-bold py-3 px-8 rounded-full transition duration-300 shadow-[0_0_15px_rgba(20,184,166,0.5)]">
+            <p class="text-xl text-slate-300 mb-10 leading-relaxed" data-aos="fade-up" data-aos-delay="200">Expert software consulting turning ideas and problems into complete solutions.</p>
+            <a href="index.html#contact" data-aos="zoom-in" data-aos-delay="400" class="inline-block bg-brand-teal hover:bg-brand-cyan text-white font-bold py-3 px-8 rounded-full transition duration-300 shadow-[0_0_15px_rgba(20,184,166,0.5)] cursor-none">
                 Let's Build Together
             </a>
         </div>
     </section>
 
     <section id="expertise" class="py-24 px-4 bg-slate-900 dark:bg-black text-white border-t border-slate-800">
-        <div class="max-w-6xl mx-auto text-center reveal">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 tracking-wide uppercase">Solving Your Most Complex Challenges.</h2>
-            <p class="text-lg text-slate-300 max-w-4xl mx-auto mb-20 leading-relaxed">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 tracking-wide uppercase" data-aos="fade-up">Solving Your Most Complex Challenges.</h2>
+            <p class="text-lg text-slate-300 max-w-4xl mx-auto mb-20 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
                 We take an iterative approach to software development by deeply understanding the problem before crafting the simplest solution. Our focus is on maintainability, security, and clean architecture when engineering enterprise applications.
             </p>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
                 
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="200">
                     <div class="w-32 h-24 mb-6 text-brand-teal flex items-center justify-center">
                         <svg class="w-full h-full" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" /></svg>
                     </div>
@@ -99,7 +122,7 @@
                     <p class="text-slate-400 leading-relaxed text-sm px-4">Leveraging advanced academic training to architect intelligent systems, predictive models, and sophisticated data-driven solutions.</p>
                 </div>
 
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="400">
                     <div class="w-32 h-24 mb-6 text-brand-teal flex items-center justify-center relative">
                         <svg class="w-full h-full" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" /></svg>
                         <svg class="w-12 h-12 absolute bottom-0 right-4 text-brand-cyan bg-slate-900 rounded-full" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077l1.41-.513m14.095-5.13l1.41-.513M5.106 17.785l1.15-.964m11.49-9.642l1.149-.964M7.501 19.79l.867-1.326m7.264-11.08l.867-1.326M10.142 20.875l.542-1.5m4.632-12.75l.542-1.5M12 21.25V19.5m0-15V3m0 0a8.995 8.995 0 015.025 1.54M12 3a8.995 8.995 0 00-5.025 1.54" /></svg>
@@ -108,7 +131,7 @@
                     <p class="text-slate-400 leading-relaxed text-sm px-4">Architecting resilient CI/CD pipelines, secure database migrations, and real-time industrial automation for enterprise visibility.</p>
                 </div>
 
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="600">
                     <div class="w-32 h-24 mb-6 text-brand-teal flex items-center justify-center">
                         <svg class="w-full h-full" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" /><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" /></svg>
                     </div>
@@ -122,27 +145,27 @@
     
     <section id="portfolio" class="py-24 px-4 bg-slate-100 dark:bg-brand-darkbg transition-colors duration-300">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold text-brand-navy dark:text-white mb-12 text-center reveal">Customer Delivered Projects</h2>
+            <h2 class="text-3xl font-bold text-brand-navy dark:text-white mb-12 text-center" data-aos="fade-up">Customer Delivered Projects</h2>
             
-            <div class="bg-white dark:bg-brand-darkcard rounded-xl shadow-lg overflow-hidden reveal border border-transparent dark:border-slate-700 mb-12">
+            <div class="bg-white dark:bg-brand-darkcard rounded-xl shadow-lg overflow-hidden border border-transparent dark:border-slate-700 mb-12" data-aos="fade-up" data-aos-delay="200">
                 <div class="relative w-full h-64 md:h-96 bg-slate-200 dark:bg-slate-800 border-b dark:border-slate-700 group overflow-hidden">
                     <div class="slide absolute inset-0 transition-opacity duration-500 opacity-100">
-                        <img src="diary1.png" alt="Migraine Diary Dashboard View" class="lightbox-trigger w-full h-full object-cover md:object-contain cursor-pointer">
+                        <img src="diary1.png" alt="Migraine Diary Dashboard View" class="lightbox-trigger w-full h-full object-cover md:object-contain cursor-none">
                     </div>
                     <div class="slide absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none">
-                        <img src="diary2.png" alt="Migraine Diary Patient Logging View" class="lightbox-trigger w-full h-full object-cover md:object-contain cursor-pointer">
+                        <img src="diary2.png" alt="Migraine Diary Patient Logging View" class="lightbox-trigger w-full h-full object-cover md:object-contain cursor-none">
                     </div>
                     <div class="slide absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none">
-                        <img src="diary3.png" alt="Migraine Diary History View" class="lightbox-trigger w-full h-full object-cover md:object-contain cursor-pointer">
+                        <img src="diary3.png" alt="Migraine Diary History View" class="lightbox-trigger w-full h-full object-cover md:object-contain cursor-none">
                     </div>
                     <div class="slide absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none">
-                        <img src="diary4.png" alt="Migraine Diary Admin View" class="lightbox-trigger w-full h-full object-cover md:object-contain cursor-pointer">
+                        <img src="diary4.png" alt="Migraine Diary Admin View" class="lightbox-trigger w-full h-full object-cover md:object-contain cursor-none">
                     </div>
 
-                    <button onclick="changeSlide(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity focus:outline-none z-10">
+                    <button onclick="changeSlide(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity focus:outline-none z-10 cursor-none">
                         &#10094;
                     </button>
-                    <button onclick="changeSlide(1)" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity focus:outline-none z-10">
+                    <button onclick="changeSlide(1)" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity focus:outline-none z-10 cursor-none">
                         &#10095;
                     </button>
 
@@ -177,7 +200,7 @@
                 </div>
             </div>
 
-            <div class="bg-white dark:bg-brand-darkcard rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300 reveal border border-transparent dark:border-slate-700">
+            <div class="bg-white dark:bg-brand-darkcard rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300 border border-transparent dark:border-slate-700" data-aos="fade-up" data-aos-delay="400">
                 <div class="p-8">
                     <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
                         <h3 class="text-xl font-bold text-brand-navy dark:text-white">Systems Automation Development</h3>
@@ -206,25 +229,28 @@
         </div>
     </section>
 
-    <section id="contact" class="py-24 px-4 max-w-2xl mx-auto text-center reveal">
-        <h2 class="text-3xl font-bold text-brand-navy dark:text-white mb-6">Get In Touch</h2>
-        <p class="text-slate-600 dark:text-slate-400 mb-10">Ready to discuss your next technical project? Drop a message below.</p>
+    <section id="contact" class="py-24 px-4 max-w-2xl mx-auto text-center relative">
+        <h2 class="text-3xl font-bold text-brand-navy dark:text-white mb-6" data-aos="fade-up">Get In Touch</h2>
+        <p class="text-slate-600 dark:text-slate-400 mb-10" data-aos="fade-up" data-aos-delay="100">Ready to discuss your next technical project? Drop a message below.</p>
         
-        <div class="bg-white dark:bg-brand-darkcard p-8 md:p-10 rounded-2xl shadow-xl border border-transparent dark:border-slate-700">
+        <div class="absolute top-1/2 left-0 w-72 h-72 bg-brand-teal/20 rounded-full mix-blend-multiply filter blur-3xl opacity-50 dark:opacity-20 pointer-events-none"></div>
+        <div class="absolute bottom-0 right-0 w-72 h-72 bg-brand-cyan/20 rounded-full mix-blend-multiply filter blur-3xl opacity-50 dark:opacity-20 pointer-events-none"></div>
+
+        <div class="relative bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-8 md:p-10 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.1)] border border-white/40 dark:border-white/10" data-aos="zoom-in" data-aos-delay="200">
             <form id="contact-form" action="https://formspree.io/f/xreaneng" method="POST" class="space-y-6 text-left">
                 <div>
                     <label for="name" class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Your Name" required class="w-full px-5 py-4 rounded-lg border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-white focus:outline-none focus:border-brand-teal focus:ring-2 focus:ring-brand-teal/20 transition">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required class="w-full px-5 py-4 rounded-lg border border-slate-200 dark:border-slate-600 bg-white/50 dark:bg-slate-900/50 text-slate-800 dark:text-white focus:outline-none focus:border-brand-teal focus:ring-2 focus:ring-brand-teal/20 transition cursor-none">
                 </div>
                 <div>
                     <label for="email" class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Email</label>
-                    <input type="email" id="email" name="email" placeholder="you@example.com" required class="w-full px-5 py-4 rounded-lg border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-white focus:outline-none focus:border-brand-teal focus:ring-2 focus:ring-brand-teal/20 transition">
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required class="w-full px-5 py-4 rounded-lg border border-slate-200 dark:border-slate-600 bg-white/50 dark:bg-slate-900/50 text-slate-800 dark:text-white focus:outline-none focus:border-brand-teal focus:ring-2 focus:ring-brand-teal/20 transition cursor-none">
                 </div>
                 <div>
                     <label for="message" class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Project Details</label>
-                    <textarea id="message" name="message" rows="5" placeholder="How can I help you?" required class="w-full px-5 py-4 rounded-lg border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-white focus:outline-none focus:border-brand-teal focus:ring-2 focus:ring-brand-teal/20 transition resize-none"></textarea>
+                    <textarea id="message" name="message" rows="5" placeholder="How can I help you?" required class="w-full px-5 py-4 rounded-lg border border-slate-200 dark:border-slate-600 bg-white/50 dark:bg-slate-900/50 text-slate-800 dark:text-white focus:outline-none focus:border-brand-teal focus:ring-2 focus:ring-brand-teal/20 transition resize-none cursor-none"></textarea>
                 </div>
-                <button type="submit" id="submit-button" class="w-full bg-brand-navy dark:bg-brand-teal hover:bg-slate-800 dark:hover:bg-brand-cyan text-white font-bold py-4 px-8 rounded-lg transition duration-300 shadow-lg flex justify-center items-center gap-2">
+                <button type="submit" id="submit-button" class="w-full bg-brand-navy/90 dark:bg-brand-teal/90 hover:bg-slate-800 dark:hover:bg-brand-cyan text-white font-bold py-4 px-8 rounded-lg transition duration-300 shadow-lg flex justify-center items-center gap-2 cursor-none">
                     <span>Send Message</span>
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </button>
@@ -244,12 +270,38 @@
         <p>&copy; 2026 Hook Point Solutions. All rights reserved.</p>
     </footer>
 
-    <div id="lightbox" class="fixed inset-0 z-[100] hidden bg-black/90 flex items-center justify-center p-4 transition-opacity">
-        <button id="lightbox-close" class="absolute top-6 right-6 text-white hover:text-brand-teal text-4xl focus:outline-none">&times;</button>
+    <div id="lightbox" class="fixed inset-0 z-[100] hidden bg-black/90 flex items-center justify-center p-4 transition-opacity cursor-none">
+        <button id="lightbox-close" class="absolute top-6 right-6 text-white hover:text-brand-teal text-4xl focus:outline-none cursor-none">&times;</button>
         <img id="lightbox-img" src="" alt="Enlarged View" class="max-h-[90vh] max-w-full rounded shadow-2xl">
     </div>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <script>
+        // Initialize Scroll Animations
+        AOS.init({
+            once: true,
+            offset: 50,
+            duration: 800,
+        });
+
+        // Custom Cursor Logic
+        const cursor = document.querySelector('.custom-cursor');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Add hover effect to interactive elements
+        const interactables = document.querySelectorAll('a, button, input, textarea, .lightbox-trigger');
+        interactables.forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+        });
+
+
+        // Existing Logic Below
         const themeToggleBtn = document.getElementById('theme-toggle');
         const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
         const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
@@ -299,25 +351,7 @@
             });
         });
 
-        const revealElements = document.querySelectorAll('.reveal');
-        
-        const revealCallback = (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target); 
-                }
-            });
-        };
-
-        const revealOptions = {
-            threshold: 0.1, 
-            rootMargin: "0px 0px -50px 0px"
-        };
-
-        const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
-        revealElements.forEach(el => revealObserver.observe(el));
-
+        // Slideshow logic
         let currentSlideIndex = 0;
         const slides = document.querySelectorAll('.slide');
         const dots = document.querySelectorAll('.slide-dot');
@@ -350,6 +384,7 @@
 
         if(slides.length > 0) showSlide(0);
 
+        // Lightbox logic
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         const lightboxClose = document.getElementById('lightbox-close');
@@ -383,6 +418,7 @@
             }
         });
 
+        // Form Logic
         const form = document.getElementById("contact-form");
         const statusMessage = document.getElementById("form-status");
         const submitButton = document.getElementById("submit-button");
